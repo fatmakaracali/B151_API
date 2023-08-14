@@ -42,6 +42,8 @@ public class Get06 extends HerokuuapprBaseUrl {
         spec.pathParams("first","booking","second",22);
         Response response=given().spec(spec).get("{first}/{second}");
         response.prettyPrint();
+
+        //1.yol
         response
                 .then()
                 .statusCode(200)
@@ -63,7 +65,7 @@ public class Get06 extends HerokuuapprBaseUrl {
         assertEquals("John",json.getString("firstname"));
         assertEquals("Smith",json.getString("lastname"));
         assertEquals(111,json.getInt("totalprice"));
-        assertEquals(true,json.getBoolean("depositpaid"));
+        assertTrue(json.getBoolean("depositpaid"));
         assertEquals("2018-01-01",json.getString("bookingdates.checkin"));
         assertEquals("2019-01-01",json.getString("bookingdates.checkout"));
         assertEquals("Breakfast",json.getString("additionalneeds"));
