@@ -9,6 +9,7 @@ public class JsonplaceholderBaseUrl {
     protected RequestSpecification spec;
     @Before
     public void Setup(){
+
         spec = new RequestSpecBuilder().setBaseUri("https://jsonplaceholder.typicode.com").build();
     }
     //tekrarli olarak kullanilan degerler burada yazilir

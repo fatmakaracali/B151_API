@@ -18,7 +18,7 @@ public class get04 extends JsonplaceholderBaseUrl {
     Then   HTTP Status Code should be 200
     And    Response format should be "application/ison"
     And    200 adet todos olmalı
-    And    başlıklarından birisi  , olmalı
+    And    başlıklarından birisi  , "delectus aut autem"  olmalı
     And    userIds ler arasında 2, 7, and 9 bulunmalı*/
 
 
