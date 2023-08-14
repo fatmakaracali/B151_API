@@ -23,7 +23,13 @@ public class RequestResponse {
             1- Set the URL(url'i tanimla)
             2- Set the expected data(Beklenen datalari ayarla)
             3- Send the request and get the response(Istegi gönder ve cevabi al)
-            4- Do assertion(Dogrulama yap)                                              */
+            4- Do assertion(Dogrulama yap)
+     */
+
+    //  1- Set the URL = URL'i tanımla
+    //  2- Set the expected data = Beklenen dataları ayarla
+    //  3- Send the request and get the response = İsteği gönder ve cevabı al
+    //  4- Do assertion = Doğrulama yap
 
 
 
@@ -39,15 +45,15 @@ public class RequestResponse {
         System.out.println("response.statusCode() = " + response.statusCode());
 
         //Content Type nasil yazdirilir
-        System.out.println("response.contentType() = " + response.contentType());
+        System.out.println("contentType() = " + response.contentType());
 
         //Status Line nasil yazdirilir?
-        System.out.println("response.statusLine() = " + response.statusLine());
+        System.out.println("statusLine() = " + response.statusLine());
 
         //Header'daki veriler nasil yazdirilir?
-        System.out.println("response.header(\"Server\") = " + response.header("Server"));
+        System.out.println("Server = " + response.header("Server"));
 
-        System.out.println("response.header(\"Connection\") = " + response.header("Connection"));
+        System.out.println("Connection = " + response.header("Connection"));
 
         System.out.println("****************************************");
 
