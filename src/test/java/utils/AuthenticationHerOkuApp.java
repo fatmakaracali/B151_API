@@ -11,7 +11,12 @@ public class AuthenticationHerOkuApp {
 
         public static String generateToken() {
             String body = "{\"username\" : \"admin\",\"password\" : \"password123\"}";
-            Response response = given().body(body).contentType(ContentType.JSON).when().post("https://restful-booker.herokuapp.com/auth");
+            Response response = given()
+                    .body(body)
+                    .contentType(ContentType.JSON)
+                    .when()
+                    .post("https://restful-booker.herokuapp.com/auth");
+
             return response.jsonPath().getString("token");
         }
 

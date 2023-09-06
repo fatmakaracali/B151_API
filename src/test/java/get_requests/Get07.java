@@ -46,7 +46,7 @@ public class Get07 extends JsonPlaceHolderBaseUrl {
         JsonPath json = response.jsonPath();
 
         //"Id"leri 190 dan büyük olanları konsola yazdırın
-        List<Integer>idList = json.getList("findAll{it.id>190}.userId");
+        List<Integer>idList = json.getList("findAll{it.id>190}.userId");   //Groovy Language
         System.out.println("idList ----->" + idList);
 
         //Groovy language list icindeki jsonlari sorgulama yapip data geri cagirmamizi saglar

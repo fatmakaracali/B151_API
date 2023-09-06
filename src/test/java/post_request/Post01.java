@@ -75,6 +75,7 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
         expectedData.put("userId",55);
         expectedData.put("title","Tidy your room");
         expectedData.put("completed",false);
+        System.out.println("expectedData ="+ expectedData);
 
 
         //Sent req and get res

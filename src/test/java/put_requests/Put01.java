@@ -1,4 +1,4 @@
-package post_request;
+package put_requests;
 
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
@@ -42,7 +42,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
         expectedData.put("title","Wash the dishes");
         expectedData.put("completed",false);*/
 
-        Map<String, Object> expectedData= new JsonPlaceHolderTestData().expectedDataMapper(21,"Wash the dishes",false);
+        Map<String, Object> expectedData = new JsonPlaceHolderTestData().expectedDataMapper(21,"Wash the dishes",false);
 
         // send req , get res
         Response response =  given(spec).body(expectedData).when().put("{first}/{second}");  //Serialization

@@ -1,17 +1,18 @@
 package get_requests;
 
-import base_urls.HerokuuapprBaseUrl;
+import base_urls.HerokuAppBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Get06 extends HerokuuapprBaseUrl {
+public class Get06 extends HerokuAppBaseUrl {
 
     /*
     Given
@@ -70,6 +71,21 @@ public class Get06 extends HerokuuapprBaseUrl {
         assertEquals("2019-01-01",json.getString("bookingdates.checkout"));
         assertEquals("Breakfast",json.getString("additionalneeds"));
 
+        //SoftAssertion 3 adimda yapilir.--> testng poma eklenmeli
+        //1.adim softassertion objesi olusturulur
+        SoftAssert softAssert = new SoftAssert();
+
+        //2.adim assertion yapilir
+        softAssert.assertEquals(json.getString("firstname"),"John","firstname uyusmadi");
+        softAssert.assertEquals(json.getString("lastname"),"Smith","lastname uyusmadi");
+        softAssert.assertEquals(json.getInt("totalprice"),111,"toplam ucret uyusmadi");
+        softAssert.assertEquals(json.getBoolean("depositpaid"),true);
+        softAssert.assertEquals(json.getString("bookingdates.checkin"),"2018-01-01");
+        softAssert.assertEquals(json.getString("bookingdates.checkout"),"2019-01-01");
+
+        //3. adim softAssert.assertAll anahtar kelimesiyle bitirilir
+
+         softAssert.assertAll();
 
 
     }
